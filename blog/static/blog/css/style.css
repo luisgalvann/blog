@@ -1,0 +1,39 @@
+body {
+  padding-top: 70px;
+  background-color: hsl(0, 0%, 98%);
+}
+
+/* le añadimos una sombra a la clase card de bootstrap */
+.card {
+  box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+}
+
+.post-img {
+  margin: auto 0;
+}
+
+.post-content {
+  margin-left: -50px;
+}
+
+.avatar-img {
+  height: 125px;
+  width: 125px;
+}
+
+.post-title {
+  color: #444444;
+}
+
+.post-title:hover {
+  color: #336999;
+  text-decoration: none;
+}
+
+.btn-create {
+  color: white;
+}
+
+.btn-create:hover {
+  color: black;
+}

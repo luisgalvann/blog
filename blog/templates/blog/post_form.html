@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="card p-5">
+  <form method="POST">
+    {% csrf_token %}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Blog Post</legend>
+      {{ form|crispy }}
+    </fieldset>
+    <button class="btn btn-primary btn-sm m-1 float-right" type="submit">Post</button>
+
+    {% if object %}
+    <a class="btn btn-secondary btn-sm m-1 float-right" href="{% url 'post-detail' object.id %}">Cancel</a>
+    {% else %}
+    <a class="btn btn-secondary btn-sm m-1 float-right" href="{% url 'post-list' %}">Cancel</a>
+    {% endif %}
+
+  </form>
+</div>
+{% endblock content %}

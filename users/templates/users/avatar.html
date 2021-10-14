@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %} 
+{% load crispy_forms_tags %} 
+{% block content %}
+<div class="card p-3 my-3">
+  <div class="media">
+    <img class="avatar-img rounded-circle" src="{{ user.avatar.image.url }}" />
+    <div class="media-body">
+      <h2 class="card-title">{{ user.username }}</h2>
+      <p class="card-text text-secondary">{{ user.email }}</p>
+    </div>
+  </div> 
+
+  <!-- enctype.. es necesario para que se guarde la imagen -->
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">User Info</legend>
+        {{ u_form|crispy }}
+        {{ a_form|crispy }}
+    </fieldset>
+    <div class="form-group">
+      <button class="btn btn-primary btn-sm m-1" type="submit">Update</button>
+    </div>
+</form>
+</div>
+{% endblock content %}
